@@ -13,7 +13,6 @@ $(document).ready(function(){
 				'autoScale'		: false,
 				'transitionIn'	: 'none',
 				'transitionOut'	: 'none',
-				// 'title'			: this.title,
 				'width'		: 680,
 				'height'		: 495,
 				'href'			: location
@@ -43,6 +42,3 @@ function navControlBinder(nav_id, div_id){
 		return false;
 	});
 }
-
-
-// somewhere over here, put the fancy box trigger.

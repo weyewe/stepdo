@@ -16,7 +16,6 @@
 				#wrap {display:table;height:100%}
 			</style>
 		<![endif]-->
-		<%= stylesheet_link_tag "uploadify", "application" %>
 		
 		<link type="text/css" rel="stylesheet" media="screen" href="/javascripts/SyntaxHighlighter/styles/shCore.css">
 		<link type="text/css" rel="stylesheet" media="screen" href="/stylesheets/syntaxHighlighter.css">
@@ -35,10 +34,12 @@
 		<% if  edit_mode?(params) %>
 		<%= javascript_include_tag "editor"%>
 		<% end %>
+		
 		<% if params[:controller]=="posts" and params[:action]=="show"%>
 			<%= stylesheet_link_tag "jquery.fancybox-1.3.1" %>
 			<%= javascript_include_tag "jquery.fancybox-1.3.1.pack" %>
 		<% end %>
+		
 		<%= javascript_include_tag "syntax_util", "application" %>
 	</head>
 

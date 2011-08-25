@@ -1,0 +1,31 @@
+<div id="post-header">
+	<h1 id='post-title'><%= @post.title %></h1>
+	<%= render :partial => "post_title", :locals => {:post => @post} %>
+	
+</div> <!-- EO #post-header -->
+
+<ul id="steps-container">
+	<% for step in @post.steps %>
+		<%= render :partial => "step_edit", :locals => {:step => step }%>
+	<% end %>
+</ul>
+
+
+
+<a href="#" id="add_step" >New Step</a>
+<a href="/posts" id="done">Done</a>
+<!-- <a href="#" id="preview" status="edit">Preview</a> -->
+
+<%#- session_key_name = ActionController::Base.session_options[:key] -%>
+
+<!-- <input type="hidden" id="session_key_name" name="key_name" value="<%#= session_key_name %>" />
+<input type="hidden" id="session_key_value" name="value_name" value="<%#= u cookies[session_key_name] %>" />
+<input type="hidden" id="uploadify_auth_token" name="auth_token" value="<%#= u form_authenticity_token if protect_against_forgery? %>" /> -->
+<img id="loader" src="/images/ajax-loader.gif" />
+<script type="text/javascript">
+$(document).ready(function () {  
+	$("code,pre").syntaxHighlight({showGutter: false, showControls: false, firstLine: 1});  
+});
+</script>
+
+<%= render :partial => "model_step" , :locals => {:post_secret_key => @post.uuid }%>

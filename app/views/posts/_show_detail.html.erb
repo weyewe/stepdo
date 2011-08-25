@@ -1,0 +1,21 @@
+<div class='detail-wrapper'>
+  <!-- <%# if step.details.size >0 %>
+    <ul class="uploaded_pic_wrapper clearfix" id="pic-wrapper_<%= order %>">
+      <%# for detail in step.details %>
+        <li>
+          <%# link_to detail.photo.url(:display) do %>
+          <%#= image_tag(detail.photo.url(:small) , :class =>"clearfix img-detail" , :bigsource => "#{detail.photo.url(:display)}")%>
+          <%# end %>
+        </li>
+      <%# end %>
+    </ul>
+  <%# end %> -->
+	
+	
+	<% if step.detail_code and !step.detail_code.code.blank? %> 
+		<div class="uploaded_code_container">
+			<%= step.detail_code.code.html_safe %>
+		</div>
+	<% end %>
+	
+</div>

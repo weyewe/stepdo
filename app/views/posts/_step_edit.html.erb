@@ -1,0 +1,9 @@
+<div id='step-<%= step.order %>' class="step">
+	<h2><%= step.title %></h2>
+	<%=  render :partial => "/steps/step_title", :locals => {:step => step } %>
+	<p class="step-description">
+		<%= step.description %>
+	</p>
+	<%= render :partial => "/steps/step_description", :locals => {:step => step } %>
+	<%= render :partial => "edit_detail" , :locals => {:order => step.order, :step => step } %>
+</div>

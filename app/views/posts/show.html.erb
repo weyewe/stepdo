@@ -1,0 +1,33 @@
+<div id="post-header">
+	<h1 id='post-title'><%= @post.title %></h1>
+</div> <!-- EO #post-header -->
+
+<ul id="steps-container">
+	<% for step in @post.steps %>
+		<%= render :partial => "step_view", :locals => {:step => step }%>
+	<% end %>
+</ul>
+
+<script type="text/javascript">
+$(document).ready(function () {  
+	$("code,pre").syntaxHighlight({showGutter: false, showControls: false, firstLine: 1});  
+});
+</script>
+
+<% if RAILS_ENV=='production' %>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /**
+    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+    */
+
+var disqus_identifier="post-id-<%= @post.id %>";
+  (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = 'http://userguidemadeeasy.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=userguidemadeeasy">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<% end %>

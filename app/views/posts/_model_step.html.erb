@@ -1,6 +1,7 @@
 <div class="step" id="step-n">
 	<h2>The New Step of Your Guide</h2>
-	<form method="post" id="" class="new_step_title" action="/steps"><div style="margin: 0pt; padding: 0pt; display: inline;"><input type="hidden" value="" name="authenticity_token" value="<%= form_authenticity_token %>"></div>
+
+	<form method="post" id="" class="new_step_title" action="/steps"><div style="margin: 0pt; padding: 0pt; display: inline;"><input type="hidden"  name="authenticity_token" value="<%= form_authenticity_token %>"></div>
 		<input type="text" size="30" name="step[title]" id="">
 		<input type="hidden" value="<%= post_secret_key %>" name="post_secret_key" class="secret_key">
 		<input type="hidden" value="3" name="step[order]" class="order">
@@ -12,7 +13,7 @@
 		Nullam tortor. Fusce malesuada. Quisque dolor mauris, malesuada quis, ultricies non, interdum blandit, lectus. Etiam nulla lacus, nonummy a, blandit sed, pellentesque eget, arcu. Phasellus id pede. Vivamus tortor nibh, tempus auctor, interdum a, faucibus ut, mi. Aliquam tincidunt turpis eleifend orci. Mauris at odio vel metus ullamcorper blandit. Nullam tortor.
 	</p>
 
-	<form method="post" id="" class="new_step_description" action="/steps"><div style="margin: 0pt; padding: 0pt; display: inline;"><input type="hidden" value="" name="authenticity_token"></div>
+	<form method="post" id="" class="new_step_description" action="/steps"><div style="margin: 0pt; padding: 0pt; display: inline;"><input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"></div>
 		<textarea rows="20" name="step[description]" id="" cols="40"></textarea>
 		<input type="hidden" value="<%= post_secret_key %>" name="post_secret_key" class="secret_key">
 		<input type="hidden" value="3" name="step[order]" class="order">

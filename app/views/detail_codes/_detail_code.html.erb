@@ -1,0 +1,8 @@
+<% form_for detail_code, :html => {:id => "", :class=>"add_detail_code"} do |f| %>
+	<%= f.text_area :code, :id => "codify-#{detail_code.step.order}" , :class=>"codify", :size => "20x5" %>
+	<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+	<input type="hidden" class="order" name="step[order]" value="1" />
+	<%= submit_tag "Upload", :class=>"code-upload"%>
+	<div id='loading-codify-<%= detail_code.step.order  %>' class='loading-codify'> <img src="/images/ajax-loader.gif" /></div>
+<% end %>
+</div>
