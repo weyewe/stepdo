@@ -1,0 +1,15 @@
+
+<%= link_to "Create Guide", create_guide_url %>
+<ul id="listing-guide">
+	<% for post in @posts %>
+	<div class='guide-item'>
+		<h2>
+			<% title =   post.title  || "No title" %>
+			<%= link_to title, guide_url(post.user.id, post.id), :class => "post-title" %>
+		</h2>
+		<div class='manage-post'>
+			<%= link_to "Edit", edit_guide_url(post.user.id, post.id)%>
+		</div>
+	</div>
+	<% end %>
+</ul>

@@ -1,0 +1,105 @@
+<div id="post-header">
+	<h1 id='post-title'>User Guide Made Simple</h1>
+</div> <!-- EO #post-header -->
+
+<ul id="steps-container">
+	<div id='step-1' class="step">
+		<h2>Focus in the information, not the presentation</h2>
+		
+		<p class="step-description">
+			Most of the user guides are boring, written in the formal English (think about financial contract). However, if your target market is normal people like <a href="http://www.facebook.com/kumakinsey">me</a> and your product is consumer product (shoes, cellphone), it won't make the click.
+		</p>
+	
+
+		<%#= render :partial => "add_detail", :locals => {:order => 1} %>
+		
+	</div>
+	
+	<div id='step-2' class="step">
+		<h2>Arrange those ideas in the logical manner, step-by-step</h2>
+		
+		<p class="step-description">
+			We understand that writing guide is a difficult thing to do: <b>you have to think about content and presentation at once</b>. Over here, we have created a template so that you can churn out your thinking rapidly in logical and modular manner (step-by-step).
+		</p>
+	
+
+		<%#= render :partial => "add_detail" , :locals => {:order => 2}%>
+	</div>
+	
+	<div id='step-3' class="step">
+		<h2>Publish and <span class='strike-through'>Monetize</span> be rewarded</h2>
+
+		
+		<p class="step-description">
+			If you want, you can find relevant companies to support you in making <span class='strike-through'>user guide</span> usualGuide (like Nike for shoes). Hey, what is better than that? You are helping the society and getting paid! And, the companies are happy that they are not the one making the informal guide. It is their fans that are making the easy-to-decipher guide.
+		</p>
+		
+
+		
+		
+	</div>
+</ul>
+
+<div id="options" class="clearfix">
+	<ul class="clearfix">
+	
+			<a href="#" id="register" class='nav-welcome'>Register</a>
+
+			<a href="#" id='login' class='nav-welcome'>Login</a>
+		
+		
+			<a href="#" id='interesting' class="selected nav-welcome">Interesting Guides</a>
+		<!-- <div class="clearfix">
+			<a href="#" id='ask-question'>Request for Guide</a>
+		</div> -->
+	</ul>
+	
+	<div class="current_show welcome-form" id="interesting-guides">
+		<h2>
+			<a href="#" class="post-title">
+			Building Startup, Inception way, with you as Cobb and Joi Ito as Saito
+			</a>
+		</h2>
+		
+		<h2>
+			<a href="#"  class="post-title">
+			Pampering your cat, playboy style
+			</a>
+		</h2>
+		
+		<h2>
+			<a href="#" class="post-title">
+			Pitching to a VC
+			</a>
+		</h2>
+	</div>
+	
+	
+	<div id="login-form" class='welcome-form'>
+		
+
+    
+		<% form_for "user", :html => {:id => "new_user_session_welcome"}, :url => user_session_path do |f| %>
+			<h3 class="tab-selector">Login</h3>
+		  <%#= f.error_messages %>
+			<div id="input-wrapper">
+			  <%= f.label :email %><br />
+			  <%= f.text_field :email %>
+				<%#= show_error_on :email, @user_session   %>
+			  <br />
+			  <%= f.label :password %><br />
+			  <%= f.password_field :password %>
+				<%#= show_error_on :password, @user_session   %>
+			  <br />
+			  <%#= f.check_box :remember_me %><%= f.label :remember_me %><br />
+			  <br />
+			  <%= f.submit "Login" %>
+			</div>
+		<% end %>
+	</div>
+	
+
+</div>
+
+
+

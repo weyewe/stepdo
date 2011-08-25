@@ -1,0 +1,63 @@
+<div class="step" id="step-n">
+	<h2>The New Step of Your Guide</h2>
+	<form method="post" id="" class="new_step_title" action="/steps"><div style="margin: 0pt; padding: 0pt; display: inline;"><input type="hidden" value="" name="authenticity_token" value="<%= form_authenticity_token %>"></div>
+		<input type="text" size="30" name="step[title]" id="">
+		<input type="hidden" value="<%= post_secret_key %>" name="post_secret_key" class="secret_key">
+		<input type="hidden" value="3" name="step[order]" class="order">
+		<input type="hidden" value="<%= current_user.id %>" name="post_owner" class="post_owner">
+		<input type="submit" value="Done" name="commit">
+	</form>
+
+	<p class="step-description">
+		Nullam tortor. Fusce malesuada. Quisque dolor mauris, malesuada quis, ultricies non, interdum blandit, lectus. Etiam nulla lacus, nonummy a, blandit sed, pellentesque eget, arcu. Phasellus id pede. Vivamus tortor nibh, tempus auctor, interdum a, faucibus ut, mi. Aliquam tincidunt turpis eleifend orci. Mauris at odio vel metus ullamcorper blandit. Nullam tortor.
+	</p>
+
+	<form method="post" id="" class="new_step_description" action="/steps"><div style="margin: 0pt; padding: 0pt; display: inline;"><input type="hidden" value="" name="authenticity_token"></div>
+		<textarea rows="20" name="step[description]" id="" cols="40"></textarea>
+		<input type="hidden" value="<%= post_secret_key %>" name="post_secret_key" class="secret_key">
+		<input type="hidden" value="3" name="step[order]" class="order">
+		<input type="hidden" value="<%= current_user.id %>" name="post_owner" class="post_owner">
+		<input type="submit" value="Done" name="commit">
+	</form>
+
+	<div class="detail-wrapper">
+
+		<img src="/images/upload_pic.png" class="upload-image">
+		<img src="/images/upload_code.png" class="upload-code no-show">
+		<div class="content-pic-wrapper">
+			<h2>Click the Browse button to select pictures</h2>
+			<form method="post" id="" enctype="multipart/form-data" class="add_detail_pic" action="/details"><div style="margin: 0pt; padding: 0pt; display: inline;">
+				<input type="hidden" value="" name="authenticity_token"></div>
+				<input type="file" size="30" name="detail[photo]" id="uploadify-3" class="uploadify">
+				<input type="hidden" value="1" name="step[order]" class="order">
+				<div class="loading-bar" id="loading-bar-3"></div>
+			</form>
+		</div>
+
+		<ul id="pic-wrapper_3" class="uploaded_pic_wrapper clearfix">
+		</ul>
+		
+		<div class='content-code-wrapper'>
+			<h2>Put your code in the text box, wrapped with <%=h "<pre></pre>" %></h2>
+
+			<form method="post" id="" class="add_detail_code" action="/detail_codes"><div style="margin: 0pt; padding: 0pt; display: inline;">
+				<input type="hidden" value="nkqLX4ZUsFlnEJniyLFOhSRHP1ULTn23LVkywLGgLMo=" class="auth_tok" name="authenticity_token"></div>
+				<textarea rows="5" name="detail_code[code]" id="codify-1" cols="20" class="codify"></textarea>
+				<input type="hidden" value="<%= current_user.id%>" name="post_owner" class="post_owner">
+				<input type="hidden" value="<%= post_secret_key %>" name="post_secret_key" class="secret_key">
+				<input type="hidden" value="1" name="step[order]" class="order">
+				<input type="submit" value="Upload" name="commit" class="code-upload">
+				<div class="loading-codify" id="loading-codify-1"> <img src="/images/ajax-loader.gif"></div>
+			</form>
+					
+					
+		</div>
+
+
+
+		<div class="uploaded_code_container">
+		</div>
+		
+		
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<% form_for post, :url => {:controller => "posts", :action => "update", :id => post.id }, :html=>{:class=>"post_title", :id => ""} do |f| %>
+	<%= f.text_field :title , :id => ""%>
+		<input type="hidden" id="secret_key" name="post_secret_key" value="<%= post.uuid %>" />
+		<input type="hidden" class="post_owner" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+	<%= submit_tag "Done" %>
+<% end %>

@@ -1,0 +1,6 @@
+// alert("boom boom from create.js.erb");
+var title = "<%= @post.title %>";
+<% new_form = render :partial => "post_title", :locals => {:post => @post } %>
+var new_form = "<%= escape_javascript( new_form ) %>";
+
+

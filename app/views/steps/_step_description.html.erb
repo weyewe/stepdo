@@ -1,0 +1,7 @@
+<% form_for step , :html => { :id => "", :class => "new_step_description"} do |f| %>
+	<%= f.text_area :description, :id => "" %>
+	<input type="hidden" class="secret_key" name="post_secret_key" value="<%= step.post.uuid %>" />
+	<input type="hidden" class="order" name="step[order]" value="<%= step.order %>" />
+	<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+	<%= submit_tag "Done" %>
+<% end %>

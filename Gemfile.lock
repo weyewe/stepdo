@@ -73,6 +73,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
+    uuidtools (2.1.2)
     warden (1.0.4)
       rack (>= 1.0)
 
@@ -83,3 +84,4 @@ DEPENDENCIES
   devise
   mysql2 (~> 0.2.11)
   rails (= 3.0.10)
+  uuidtools

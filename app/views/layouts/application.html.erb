@@ -1,14 +1,69 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-  <title>NewStepdo</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
+	<head>
+		<% if params[:controller]=="posts" and params[:action]=="show" and @post%>
+			<title>usualGuide | <%=h @post.title %></title>
+		<% else %>
+			<title>usualGuide | User Guide Made Simple</title>
+		<% end %>
+		
+		<meta http-equiv="Content-Language" content="English" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<%= stylesheet_link_tag "base", "sticky_footer" %>
+		<!--[if !IE 7]>
+			<style type="text/css">
+				#wrap {display:table;height:100%}
+			</style>
+		<![endif]-->
+		<%= stylesheet_link_tag "uploadify", "application" %>
+		
+		<link type="text/css" rel="stylesheet" media="screen" href="/javascripts/SyntaxHighlighter/styles/shCore.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/stylesheets/syntaxHighlighter.css">
+		<%= stylesheet_link_tag "application" %>
+		
+		<%= javascript_include_tag "jquery-1.4.2.min" %>
+		
 
-<%= yield %>
+		
 
-</body>
+		<script type="text/javascript" src="/javascripts/shCoreAscii.js"></script>
+		<script type="text/javascript" src="/javascripts/syntaxHighlight.js"></script>
+		<script type="text/javascript" src="/javascripts/brush.js"></script>
+		
+		
+		<% if  edit_mode?(params) %>
+		<%= javascript_include_tag "editor"%>
+		<% end %>
+		<% if params[:controller]=="posts" and params[:action]=="show"%>
+			<%= stylesheet_link_tag "jquery.fancybox-1.3.1" %>
+			<%= javascript_include_tag "jquery.fancybox-1.3.1.pack" %>
+		<% end %>
+		<%= javascript_include_tag "syntax_util", "application" %>
+	</head>
+
+	<body>
+
+		<div id="wrap">
+			<%= render :file => "layouts/header.html.erb" %>
+			<div id="main" class="clearfix">
+				<%= yield %>
+			</div> <!-- EO div#main-->
+		</div><!-- EO div#wrap -->
+	
+	
+		<%= render :file => "layouts/footer.html.erb" %>
+		
+		<% if RAILS_ENV=='production' %>
+		
+		<script type="text/javascript">
+		var disqus_shortname = 'userguidemadeeasy';
+		(function () {
+		  var s = document.createElement('script'); s.async = true;
+		  s.src = 'http://disqus.com/forums/userguidemadeeasy/count.js';
+		  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		}());
+		</script>
+		<% end %>
+	</body>
 </html>

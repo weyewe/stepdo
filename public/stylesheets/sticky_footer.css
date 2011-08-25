@@ -1,0 +1,12 @@
+html, body { height: 100%;}
+#wrap { min-height: 100%;}
+/*With the assumption that the footer's height == 150px*/
+/*Change the #main padding-bottom to be the oppositve of #footer's 
+	margin-top. 
+	For example, if the #main padding-bottom : 50px,
+		the #footer margin-top is -50 px
+		and the height is 50px
+*/
+#main { overflow:auto; padding-bottom: 20px;}  
+#footer { position:relative; margin-top: -20px; height: 20px; clear:both; }
+body:before { content : ""; height:100%; float:left; width:0; margin-top: -32767px;}

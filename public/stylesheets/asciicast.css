@@ -1,0 +1,100 @@
+html { background-color: #D7D7D0; }
+body { font-family: Verdana, Helvetica, Arial, sans-serif; margin: 32px auto; padding: 32px;min-width: 800px; max-width: 1000px; font-size: 0.8em; background-color: #EEE; color: #333; -moz-border-radius: 16px; -webkit-border-radius: 16px; border-radius: 16px; 
+-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0,33);  
+-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0,33);
+box-shadow: 2px 2px 4px rgba(0, 0, 0, 0,33);
+}
+
+h1 { margin: 0 0 24px; }
+h1 span { visibility: hidden; }
+h1 img { margin: 0; display: inline; }
+h2 { margin-top: 32px; }
+h2 a { font-size: 0.8em; }
+img { border: 0 none; display: block; margin: 0 auto; }
+p { font-family: Verdana, Helvetica, Arial, sans-serif; line-height: 3ex; }
+a { color: #900; }
+code, pre { font: bold 1.1em "Menlo", "Monaco", "BitStream Vera Sans Mono", "Consolas", "Courier New"; }
+ol, ul { list-style-type: none; margin-left: 0; padding-left: 0; }
+fieldset { margin: 0; padding: 0; border: none 0; }
+
+div.main { margin-right: 164px; }
+div.sideBar { width: 150px; margin-top: 8px; float: right;  }
+
+/* Menu */
+ul#menu { background-color: #600; padding: 8px; position: relative; height: 20px;  }
+ul#menu li { display: inline; margin: 0 16px 0 0; }
+ul#menu a { color: #FFF; text-decoration: none; border-bottom: dotted 1px #FFF; }
+ul#menu li#searchItem { padding: 0; margin: 0; position: absolute; right: 4px; top: 2px; }
+
+/* Search Form */
+form.searchForm { margin: 2px 0; padding: 0;  padding: 2px 8px; color: #FFF; height: 20px; }
+form.searchForm * { margin: 2px 0; }
+form.searchForm input[type=text] { width: 150px; border: solid 1px #333; }
+form.searchForm input[type=submit] { border: solid 1px #333; margin-left: 8px;  }
+
+/* Language List */
+ul#languageList { float: left; width: 100%;  }
+ul#languageList li { margin-bottom: 16px; line-height: 32px; float: left; margin-right: 16px; display: inline-block; width: 250px; }
+ul#languageList img { display: inline; vertical-align: middle; }
+
+/* Tag List */
+h3#tagListHeader { font-size: 1em; font-weight: normal; margin-bottom: 4px; }
+ul.tagList { margin-top: 0; }
+ul.tagList a { font-size: 0.9em; }
+
+/* Episode Lists */
+h2 span { font-size: 0.8em; font-weight: normal; }
+ol.episodeList li { padding: 0; margin-bottom: 36px; }
+ol.episodeList p.episodeId { border: solid 1px #CCC; margin: 0 0 0 8px; width: 64px; height: 48px; text-align: center; background-color: #FFF; font: bold 24px/48px Verdana; float: left; vertical-align: top; }
+ol.episodeList h3 { margin: 0 0 0 80px; }
+ol.episodeList h3 a { color: #600; }
+ol.episodeList p.summary { font-size: 0.9em; margin: 8px 0 8px 80px; }
+ol.episodeList p.tagList { margin-left: 80px; font-size: 0.8em; margin-top: 0; }
+
+/* Episode archive */
+dl#episodeArchive dt { font-weight: bold; }
+dl#episodeArchive dd { margin: 4px 0 16px 32px;  }
+
+/* Episodes */
+#otherTranslations, .otherTranslations { font-size: 0.8em; line-height: 16px; height: 16px; margin-left: 0px; font-weight: bold; }
+#otherTranslations img, .otherTranslations img { display: inline; margin-right: 8px; vertical-align: middle;  }
+#author { font-style: italic; }
+
+.codeFilePath{ font: bold 1em "Menlo", "Monaco", "BitStream Vera Sans Mono", "Consolas", "Courier New"; text-align: right; margin-bottom: -18px; margin-right: -7px; margin-left: 300px; background-color: #CCC; padding: 2px 4px; border-color: #006; border-width: 1px 1px 0 1px; border-style: solid; }
+
+pre.erb { background-color: #300; color: #EEE; padding: 4px 8px; margin-right: -7px; margin-top: 18px; }
+
+code.terminal, pre.terminal, pre.html { font-weight: normal; font-size: 1em; white-space: pre; display: block; background-color: #000; color: #FFF; padding: 4px 16px; overflow-x: scroll; }
+pre.terminal span.passed { color: #0F0; }
+pre.terminal span.failed { color: #F00; }
+pre.terminal span.info { color: #00F; }
+pre.terminal span.forced { color: #FF0; }
+pre.terminal span.url { color: #0FF; }
+
+div.dp-highlighter { margin-bottom: 0 !important; padding: 8px; }
+code.terminal + div.dp-highlighter { position: relative; top: -12px; }
+p.title { margin: 2px 0 24px; text-align: center; font-weight: bold; font-style: italic; font-family: Georgia; }
+ol.footnotes { list-style-type: decimal; list-style-position: inside; }
+div.episodeLinks { padding: 8px 0 0; clear: both; }
+div.episodeLinks a { margin-right: 32px; }  
+
+pre.cucumber_definition { background-color: #0A263F; color: #6C6; font-weight: normal; padding: 4px; font-size: 1em; }
+pre.cucumber_definition span { color: #CC6600; }
+pre.cucumber_definition span.data { color: #FFF; }
+pre.cucumber span.undefined { color: #FF0; }
+pre.cucumber span.skipped { color: #0FF; }
+pre.cucumber span.failed { color: #F00; }
+pre.cucumber span.passed { color: #0F0; }
+
+/* Episode-specific styles */
+div.ep31 table#formatsTable { border: solid 1px #333; border-collapse: collapse; width: 100%; }
+div.ep31 table#formatsTable th { background-color: #CCC; }
+div.ep31 table#formatsTable th, div.ep31 table#formatsTable td { border: solid 1px #333; padding: 4px 16px; }
+div.ep31 table#formatsTable td { background-color: #FFF; }
+
+div.ep150 table#railsvmetal { border: solid 1px #333; border-collapse: collapse; width: 100%; }
+div.ep150 table#railsvmetal th { background-color: #CCC; }
+div.ep150 table#railsvmetal th, div.ep150 table#railsvmetal td { border: solid 1px #333; padding: 4px 16px; width: 50%; }
+div.ep150 table#railsvmetal td { background-color: #FFF; }
+
+#srcBadge { float: left; }

@@ -1,0 +1,103 @@
+<div id="post-header">
+	<h1 id='post-title'>Title of Your Guide</h1>
+	<% form_for Post.new , :html=>{:class=>"post_title"} do |f| %>
+		<%= f.text_field :title  %>
+			<input type="hidden" id="secret_key" name="post_secret_key" value="<%= @post_secret_key %>" />
+			<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+		<%= submit_tag "Done" %>
+	<% end %>
+</div> <!-- EO #post-header -->
+
+<ul id="steps-container">
+	<div id='step-1' class="step">
+		<h2>The First Step of Your Guide</h2>
+		<% form_for Step.new , :html => { :id => "", :class => "new_step_title"} do |f| %>
+			<%= f.text_field :title, :id => "" %>
+			<input type="hidden" class="secret_key" name="post_secret_key" value="<%= @post_secret_key %>" />
+			<input type="hidden" class="order" name="step[order]" value="1" />
+			<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+			<%= submit_tag "Done" %>
+		<% end %>
+		
+		<p class="step-description">
+			Fusce cursus tellus a augue. Phasellus ut arcu ut nulla dignissim auctor. Etiam sed elit sed diam tempus consectetuer. Proin dignissim, velit a gravida elementum, metus tellus dictum mauris, quis auctor est lectus in sapien. Fusce diam arcu, ultricies non, ullamcorper feugiat, semper quis, tortor. Phasellus egestas feugiat augue. Vestibulum nec wisi.
+		</p>
+	
+		<% form_for Step.new , :html => { :id => "", :class => "new_step_description"} do |f| %>
+			<%= f.text_area :description, :id => "" %>
+			<input type="hidden" class="secret_key" name="post_secret_key" value="<%= @post_secret_key %>" />
+			<input type="hidden" class="order" name="step[order]" value="1" />
+			<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+			<%= submit_tag "Done" %>
+		<% end %>
+		<%= render :partial => "add_detail", :locals => {:order => 1} %>
+		
+	</div>
+	
+	<div id='step-2' class="step">
+		<h2>The Second Step of Your Guide</h2>
+		<% form_for Step.new , :html => {:id => "",  :class => "new_step_title"} do |f| %>
+			<%= f.text_field :title, :id => "" %>
+			<input type="hidden" class="secret_key" name="post_secret_key" value="<%= @post_secret_key %>" />
+			<input type="hidden" class="order" name="step[order]" value="2" />
+			<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+			<%= submit_tag "Done" %>
+		<% end %>
+		
+		<p class="step-description">
+			Phasellus ut arcu ut nulla dignissim auctor. Etiam sed elit sed diam tempus consectetuer. Proin dignissim, velit a gravida elementum, metus tellus dictum mauris, quis auctor est lectus in sapien. Fusce diam arcu, ultricies non, ullamcorper feugiat, semper quis, tortor. Phasellus egestas feugiat augue. Vestibulum nec wisi. Vivamus lacus wisi, tincidunt quis, vulputate sit amet, placerat vitae, massa. 
+			
+		</p>
+	
+		<% form_for Step.new , :html => { :id => "", :class => "new_step_description"} do |f| %>
+			<%= f.text_area :description, :id => "" %>
+			<input type="hidden" class="secret_key" name="post_secret_key" value="<%= @post_secret_key %>" />
+			<input type="hidden" class="order" name="step[order]" value="2" />
+			<%= submit_tag "Done" %>
+			<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+		<% end %>
+		<%= render :partial => "add_detail" , :locals => {:order => 2}%>
+	</div>
+	
+	<div id='step-3' class="step">
+		<h2>The Third Step of Your Guide</h2>
+		<% form_for Step.new , :html => {:id => "", :class => "new_step_title"} do |f| %>
+			<%= f.text_field :title, :id => "" %>
+			<input type="hidden" class="secret_key" name="post_secret_key" value="<%= @post_secret_key %>" />
+			<input type="hidden" class="order" name="step[order]" value="3" />
+			<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+			<%= submit_tag "Done" %>
+		<% end %>
+		
+		<p class="step-description">
+			
+			Nullam tortor. Fusce malesuada. Quisque dolor mauris, malesuada quis, ultricies non, interdum blandit, lectus. Etiam nulla lacus, nonummy a, blandit sed, pellentesque eget, arcu. Phasellus id pede. Vivamus tortor nibh, tempus auctor, interdum a, faucibus ut, mi. Aliquam tincidunt turpis eleifend orci. Mauris at odio vel metus ullamcorper blandit. Nullam tortor.
+		</p>
+		
+		<% form_for Step.new , :html => { :id => "", :class => "new_step_description"} do |f| %>
+			<%= f.text_area :description, :id => "" %>
+			<input type="hidden" class="secret_key" name="post_secret_key" value="<%= @post_secret_key %>" />
+			<input type="hidden" class="order" name="step[order]" value="3" />
+			<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+			<%= submit_tag "Done" %>
+		<% end %>
+		
+		<%= render :partial => "add_detail", :locals => {:order => 3} %>
+	</div>
+</ul>
+<a href="#" id="add_step" >New Step</a>
+<%= link_to "Done", posts_url %>
+<!-- <a href="#" id="preview" status="edit">Preview</a> -->
+
+<%#- session_key_name = ActionController::Base.session_options[:key] -%>
+
+<input type="hidden" id="session_key_name" name="key_name" value="<%#= session_key_name %>" />
+<input type="hidden" id="session_key_value" name="value_name" value="<%#= u cookies[session_key_name] %>" />
+<input type="hidden" id="uploadify_auth_token" name="auth_token" value="<%#= u form_authenticity_token if protect_against_forgery? %>" />
+<img id="loader" src="/images/ajax-loader.gif" />
+
+<%= render :partial => "model_step" , :locals => {:post_secret_key => @post_secret_key }%>
+
+
+
+

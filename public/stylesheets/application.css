@@ -1,0 +1,80 @@
+body { width:100%;  font-size:14px; font-family:  Trebuchet MS,Trebuchet,Arial,Helvetica,sans-serif; color:rgb(10,10,10);min-width: 960px;}
+#main { width:960px; margin:0 auto; /*border:1px solid black;*/}
+#footer { text-align:center;}
+span.strike-through { text-decoration: line-through;}
+span.limiter { margin: 0 10px;}
+#main input[type='submit'] { display:none;}
+#main h1 { text-align:center; font-size:30px; padding-top:20px; padding-bottom:20px;  line-height:30px;}
+	div#post-header {text-align:center; }
+	div#post-header form { width:98%; margin:0 auto;}
+	div#post-header  input[type='text'] { border: 1px solid rgb(200,200,200);  background:0; background-color:rgb(254,254,254); font-size:25px; outline:none; width:95%; text-align:center; margin-top:20px; margin-bottom:20px;}
+	div#post-header	form.post_title{ display:none;}
+	
+
+#main div.step { padding-left:50px; margin-bottom: 25px;}
+#main div.step h2 { font-size:20px; padding-top:10px; padding-bottom:9px;}
+#main div.step h2.loading { color: rgb(200,200,200);}
+#main div.step div.detail-wrapper { margin-left: 20px; margin-top:20px;}
+#main div.step div.detail-wrapper img  { cursor : pointer;}
+
+#main div.step p.step-description { padding-left: 20px; line-height:150%; color: rgb(100,100,100); font-size:16px;}
+#main div.step p.loading { color: rgb(200,200,200);}
+#main form.new_step_title input[type='text']{ border: 1px solid rgb(200,200,200);  background:0; background-color:rgb(255,255,255); font-size:20px; outline:none; width:80%; text-align:left; display:none;  margin-bottom:5px;}
+#main form.new_step_description textarea{ border: 1px solid rgb(200,200,200);  background:0; background-color:rgb(255,255,255); font-size:18px; outline:none; width:80%; text-align:left; display:none;  margin-bottom:5px; height:100px; font-family: Helvetica, Arial; padding: 5px 10px; color: #646464; line-height:150%; margin-left:20px;}
+
+
+#main div.detail-wrapper ul.uploaded_pic_wrapper { list-style :none; margin-top:30px;}
+#main div.detail-wrapper ul.uploaded_pic_wrapper  li { float : left; width: 160px; height:160px;}
+#main div.detail-wrapper ul.uploaded_pic_wrapper  li span.img-big-location { display : none;}
+#main  div.content-pic-wrapper{ display: none;}
+#main  div.content-code-wrapper{ display: none;}
+#main form.add_detail_code textarea{ border: 1px solid rgb(200,200,200);  background:0; background-color:rgb(255,255,255); font-size:18px; outline:none; width:80%; text-align:left; display:block;  margin-bottom:5px; height:100px; font-family: Helvetica, Arial; padding: 5px 10px; color: #646464; line-height:150%; margin-left:20px;}
+#main input.code-upload { display:block; margin-left:20px; background: 0; border:0 ; border: 2px solid rgb(100,100,100); font-size:14px; background-color:rgb(100,100,100); color:white; cursor: pointer; outline:none;}
+#main form.add_detail_code div.loading-codify { display: none;}
+	#steps-container { margin-bottom:50px;}
+#loader { display : none;}
+#step-n  { display : none;}
+
+
+/* for the login */
+form#new_user_session { width:400px; margin:0 auto; border:5px solid black; padding: 20px 10px 20px 30px; }
+div#input-wrapper { width:400px; margin : 0 auto;}
+input#user_session_submit { display: block !important;}
+#user_session_email{ border: 1px solid rgb(200,200,200);  background:0; background-color:rgb(255,255,255); font-size:20px; outline:none; width:300px; text-align:left; display:block;  margin-bottom:5px;}
+#user_session_password { border: 1px solid rgb(200,200,200);  background:0; background-color:rgb(255,255,255); font-size:20px; outline:none; width:300px; text-align:left; display:block;  margin-bottom:5px;}
+#user_session_submit { border:0; background:0 ; border:2px solid black; cursor: pointer; padding: 1px 2px; font-weight:bold; font-size:14px; color:rgb(250,250,250); background-color:rgb(50,50,50); outline:none;}
+#user_session_remember_me { outline:none;}
+
+/* for the post index */
+#main a.post-title { text-decoration: none; font-size:18px; line-height:18px;}
+	#listing-guide div.guide-item { margin-bottom: 20px;}
+
+code, pre { font: bold 1.1em "Menlo", "Monaco", "BitStream Vera Sans Mono", "Consolas", "Courier New"; }
+code.terminal, pre.terminal, pre.html { font-weight: normal; font-size: 1em; white-space: pre; display: block; background-color: #000; color: #FFF; padding: 4px 16px; }
+
+/* Welcome Page */
+#options { width: 660px; margin: 0 auto;  padding:20px; border-left: 3px solid rgb(50,50,50);}
+#options div.welcome-form  { display: none;}
+#options div.current_show { display:block;} 
+#options ul { list-style:none;}
+/*#options ul  { float:left; margin-bottom:30px; margin-right:30px;}*/
+#options ul a { float:left; margin-bottom:30px; margin-right:30px; text-decoration: none; border:0; background:0 ; border:2px solid rgb(50,50,50); cursor: pointer; padding: 3px 5px; font-weight:bold; font-size:14px; color:rgb(255,255,255); background-color:rgb(50,50,50); outline:none;}
+#options ul a.selected { color: rgb(50,50,50); background-color:rgb(250, 250, 250); border:2px solid rgb(50,50,50);} 
+#options h3.tab-selector { font-size:18px; font-weight: bold; padding-left:50px;; margin-bottom:20px;}
+	#interesting-guides  { margin-left:20px;}
+	#interesting-guides  h2{ margin-bottom:10px;}
+		form#new_user_session_welcome { width:400px; margin-left:20px; border:5px solid black; padding: 20px 10px 20px 30px; }
+			#user_submit { display:block !important;}
+		form#new_user_welcome { width:400px; margin-left:20px; border:5px solid black; padding: 20px 10px 20px 30px; }
+		form#new_user_welcome .text-form { border: 1px solid rgb(200,200,200);  background:0; background-color:rgb(255,255,255); font-size:20px; outline:none; width:300px; text-align:left; display:block;  margin-bottom:5px;}
+		#user_submit { border:0; background:0 ; border:2px solid black; cursor: pointer; padding: 1px 2px; font-weight:bold; font-size:14px; color:rgb(250,250,250); background-color:rgb(50,50,50); outline:none;}
+		
+form#new_user{ width:400px; margin: 0 auto; border:5px solid black; padding: 20px 10px 20px 30px; }
+form#new_user	.text-form{ border: 1px solid rgb(200,200,200);  background:0; background-color:rgb(255,255,255); font-size:20px; outline:none; width:300px; text-align:left; display:block;  margin-bottom:5px;}
+form ul.errMsg { display:block; list-style:none; background-color:rgb(240,240,240); color:red;}
+/*header element*/
+h1 a.app-title { margin-left : 50px; text-decoration:none;}
+ul.navigation-main {float:right; list-style:none;}
+ul.navigation-main li { float:left; margin-right:50px;}
+
+p.not-confirmed{ width:600px; margin:30px auto;}

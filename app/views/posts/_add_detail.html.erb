@@ -1,0 +1,37 @@
+<div class='detail-wrapper'>
+	
+	<img class="upload-image" src="/images/upload_pic.png" />
+	<img class="upload-code no-show" src="/images/upload_code.png" />
+	<div class='content-pic-wrapper'>
+		<h2>Click the Browse button to select pictures</h2>
+		<% form_for Detail.new, :html => {:multipart => true, :id => "", :class=>"add_detail_pic"} do |f| %>
+			<%= f.file_field :photo, :id => "uploadify-#{order}" , :class=>"uploadify"%>
+			<input type="hidden" class="order" name="step[order]" value="<%= order %>" />
+			<div id='loading-bar-<%= order %>' class='loading-bar'></div>
+		<% end %>
+		
+		
+	</div>
+	
+	<ul class="uploaded_pic_wrapper clearfix" id="pic-wrapper_<%= order %>">
+	</ul>
+	
+	
+	<div class='content-code-wrapper'>
+		<h2>Put your code in the text box, wrapped with <%=h "<pre></pre>" %></h2>
+		<% form_for DetailCode.new, :html => {:id => "", :class=>"add_detail_code"} do |f| %>
+			<%= f.text_area :code, :id => "codify-#{order}" , :class=>"codify", :size => "20x5" %>
+			<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+			<input type="hidden" class="secret_key" name="post_secret_key" value="<%= @post_secret_key %>" />
+			<input type="hidden" class="order" name="step[order]" value="<%= order %>" />
+			<%= submit_tag "Upload", :class=>"code-upload"%>
+			<div id='loading-codify-<%= order %>' class='loading-codify'> <img src="/images/ajax-loader.gif" /></div>
+			
+		<% end %>
+	</div>
+	
+	
+	
+	<div class="uploaded_code_container">
+	</div>
+</div>

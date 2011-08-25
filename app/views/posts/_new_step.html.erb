@@ -1,0 +1,25 @@
+<div id='which-step' class="step">
+	<h2>Another Step of Your Guide</h2>
+	<% form_for Step.new , :html => {:id => "", :class => "new_step_title"} do |f| %>
+		<%= f.text_field :title, :id => "" %>
+		<input type="hidden" class="secret_key" name="post_secret_key" value="<%= @post_secret_key %>" />
+		<input type="hidden" class="order" name="step[order]" value="x" />
+		<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+		<%= submit_tag "Done" %>
+	<% end %>
+	
+	<p class="step-description">
+		
+		Nullam tortor. Fusce malesuada. Quisque dolor mauris, malesuada quis, ultricies non, interdum blandit, lectus. Etiam nulla lacus, nonummy a, blandit sed, pellentesque eget, arcu. Phasellus id pede. Vivamus tortor nibh, tempus auctor, interdum a, faucibus ut, mi. Aliquam tincidunt turpis eleifend orci. Mauris at odio vel metus ullamcorper blandit. Nullam tortor.
+	</p>
+	
+	<% form_for Step.new , :html => { :id => "", :class => "new_step_description"} do |f| %>
+		<%= f.text_area :description, :id => "" %>
+		<input type="hidden" class="secret_key" name="post_secret_key" value="<%= @post_secret_key %>" />
+		<input type="hidden" class="order" name="step[order]" value="x" />
+		<input type="hidden" class="post_owner" name="post_owner" value="<%= current_user.id %>" />
+		<%= submit_tag "Done" %>
+	<% end %>
+	
+	<%= render :partial => "add_detail", :locals => {:order => 'x'} %>
+</div>

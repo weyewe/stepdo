@@ -1,7 +1,15 @@
 NewStepdo::Application.routes.draw do
   root :to => "welcome#index"
   devise_for :users
-
+  
+  match '/create_guide' => 'posts#new', :as => :create_guide
+  match "/author/:auth_id/guide/:post_id" => "posts#show", :as => :guide
+  match  "/author/:auth_id/edit_guide/:post_id" => 'posts#edit' , :as => :edit_guide
+  
+  resources :posts
+  resources :steps
+  resources :details
+  resources :detail_codes
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
